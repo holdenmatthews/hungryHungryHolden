@@ -2,10 +2,25 @@ let logs = require('./db.json')
 
 let globalID = 3
 
+const toDate = (datetime) => {
+    return datetime.slice(0, 10)
+}
+
 module.exports = {
 
     getLogs: (req, res) => {
         res.status(200).send(logs)
+    },
+
+    getLogsByDate: (req, res) => {
+        let logsOnDate = []
+        const searchDate = req.params
+        for (let i = 0; i < logs.length; i++) {
+            if (toDate(logs[i].datetime) === searchDate.date) {
+                logsOnDate.push(logs[i])
+            }
+        }
+        res.status(200).send(logsOnDate)
     },
 
     addLog: (req, res) => {

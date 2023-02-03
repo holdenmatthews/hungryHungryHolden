@@ -10,9 +10,10 @@ app.use(express.json())
 app.use(cors())
 
 // endpoints
-const { getLogs, addLog, deleteLog, editLog, randomSnack, randomMeal } = require('./controller')
+const { getLogs, getLogsByDate, addLog, deleteLog, editLog, randomSnack, randomMeal } = require('./controller')
 
 app.get('/logs', getLogs)
+app.get('/logs/:date', getLogsByDate)
 app.post('/logs', addLog)
 app.delete('/logs/:id', deleteLog)
 app.put('/logs/:id', editLog)

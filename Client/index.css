@@ -1,7 +1,79 @@
+h1 {
+    color:rgb(45, 32, 17);
+}
+
 .log-container {
-    border: 2px solid red;
+    border: solid #AA2B1D;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 175px;
+    margin: 5px;
+    background-color: #EF8D32;
+}
+
+#input-fields {
+    border: solid #AA2B1D;
+    border-radius: 10px;
+    border-width: 5px;
+    width: 500px;
+    margin: 5px;
+    background-color: #EF8D32;
+    padding: 5px;
 }
 
 .page {
     display: inline;
+    background-color:rgb(255, 237, 213);
+    border-color: #AA2B1D;
+    padding: 5px;
+    color: rgb(68, 53, 35);
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.log-label {
+    background-color: #AA2B1D;
+    color: rgb(255, 237, 213);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.log-contents {
+    background-color: rgb(255, 237, 213);
+    border: 2px solid #CC561E;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    color: rgb(68, 53, 35);
+    font-family: bradley hand, cursive;
+}
+
+.hunger-box {
+    margin-right: 10px;
+}
+
+body {
+    background-color: #a9b45c;
+}
+
+#delete-button, #cancel-button {
+    color: rgb(255, 237, 213);
+    background-color: #AA2B1D;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+#edit-button {
+    color: rgb(255, 237, 213);
+    background-color: #CC561E;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#submit-button, #search-button {
+    color:rgb(45, 32, 17);
+    background-color: #a9b45c;
+    border-radius: 5px;
 }
