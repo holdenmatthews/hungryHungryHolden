@@ -30,5 +30,27 @@
         "hungerScaleBefore": 4,
         "hungerScaleAfter": 7,
         "notes": "best gluten-free bread I've had in 9 years"
+    },
+
+    {
+        "id": 3,
+        "datetime": "2023-02-05T14:24",
+        "food": "noosa raspberry yoghurt",
+        "quantity": 1,
+        "unit": "cup",
+        "hungerScaleBefore": 4,
+        "hungerScaleAfter": 7,
+        "notes": "I liked this flavor!"
+    },
+
+    {
+        "id": 4,
+        "datetime": "2023-02-06T10:17",
+        "food": "egg sandwich with cheddar cheese",
+        "quantity": 1,
+        "unit": "pcs",
+        "hungerScaleBefore": 3,
+        "hungerScaleAfter": 7,
+        "notes": "English muffin is good toasted with butter"
     }
 ]

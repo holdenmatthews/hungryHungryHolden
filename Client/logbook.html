@@ -8,28 +8,35 @@
     <title>Logbook</title>
 </head>
 <body>
-
+<div class="body">
+<div class="layer">
     <nav>
 		
-	        <button class="page"><a href="./index.html">Home</a></button>
-	        <button class="page"><a href="./logbook.html">Logbook</a></button>
-	    
+	        <button id="home-button" class="page"><a href="./index.html">Home</a></button>
+	        <button id="logbook-button" class="page"><a href="./logbook.html">Logbook</a></button>
+            <button id="hunger-scale-page" class="page"><a href="./hungerScale.html">Hunger Scale</a></button>
+            <button id="snacks-and-meals" class="page"><a href="./snacksAndMeals.html">Snacks & Meals</a></button>
+
 	</nav>
 
     <header>
-        <h1>Hungry, Hungry Holden</h1>
+        <h1>Logbook</h1>
     </header>
 
     <main>
-        <button id="new-log-btn" class="page">Create New Log</button>
-        <button id="get-all-logs" class="page">See All Logs</button>
-        <button id="get-logs-by-date" class="page">See Logs by Date</button>
+        <div class="button-row">
+            <button id="new-log-btn" class="page">Create New Log</button>
+            <button id="get-all-logs" class="page">See All Logs</button>
+            <button id="get-logs-by-date" class="page">Search Logs by Date</button>
+        </div>
+        <br>
         <section id="input-fields"></section>
         <section id="list-container"></section>
     </main>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./logbook.js"></script>
-    
+</div>
+</div>
 </body>
 </html>

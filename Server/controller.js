@@ -1,6 +1,9 @@
 let logs = require('./db.json')
 
-let globalID = 3
+let globalID = 5
+
+let snacks = ['Chips & Dip', 'Bagel with cheese', 'CheeseCheese', 'CocoRolls', 'Smoothie', 'Cinnamon Toast']
+let meals = ['Lasagna', 'Costa Vida', 'Cafe Sabor', 'Pizza', 'Cheesy Potatoes']
 
 const toDate = (datetime) => {
     return datetime.slice(0, 10)
@@ -72,15 +75,43 @@ module.exports = {
     },
 
     randomSnack: (req, res) => {
-        const snacks = ['Chips & Dip', 'Bagel with cheese', 'CheeseCheese', 'CocoRolls', 'Smoothie', 'Cinnamon Toast']
         let i = Math.floor(Math.random() * snacks.length)
         res.status(200).send(snacks[i])
     },
 
     randomMeal: (req, res) => {
-        const meals = ['Lasagna', 'Costa Vida', 'Cafe Sabor', 'Pizza', 'Cheesy Potatoes']
         let i = Math.floor(Math.random() * meals.length)
         res.status(200).send(meals[i])
+    },
+
+    getSnacks: (req, res) => {
+        res.status(200).send(snacks)
+    },
+
+    addNewSnack: (req, res) => {
+        snacks.push(req.body.snack)
+        res.status(200).send(snacks)
+    },
+
+    deleteSnack: (req, res) => {
+        const { id } = req.params
+        snacks.splice(id, 1)
+        res.status(200).send(snacks)
+    },
+
+    getMeals: (req, res) => {
+        res.status(200).send(meals)
+    },
+
+    addNewMeal: (req, res) => {
+        meals.push(req.body.meal)
+        res.status(200).send(meals)
+    },
+
+    deleteMeal: (req, res) => {
+        const { id } = req.params
+        meals.splice(id, 1)
+        res.status(200).send(meals)
     }
 
 }

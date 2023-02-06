@@ -8,25 +8,42 @@
     <title>Hungry, Hungry Holden</title>
 </head>
 <body>
-
+<div class="body">
+<div class="layer">
     <nav>
 		
-        <button class="page"><a href="./index.html">Home</a></button>
-        <button class="page"><a href="./logbook.html">Logbook</a></button>
+        <button id="home-button" class="page"><a href="./index.html">Home</a></button>
+        <button id="logbook-button" class="page"><a href="./logbook.html">Logbook</a></button>
+        <button id="hunger-scale-page" class="page"><a href="./hungerScale.html">Hunger Scale</a></button>
+        <button id="snacks-and-meals" class="page"><a href="./snacksAndMeals.html">Snacks & Meals</a></button>
     
-</nav>
+    </nav>
 
     <header>
         <h1>Hungry, Hungry Holden</h1>
     </header>
 
     <main>
-        <button id="snack-idea" class="page">Random Snack Idea</button>
-        <button id="meal-idea" class="page">Random Meal Idea</button>
+        <div class="button-row">
+            <button id="snack-idea" class="page">Random Snack Idea</button>
+            <button id="meal-idea" class="page">Random Meal Idea</button>
+        </div>
+        <section id="index-divs">
+            <div>
+                <div id="snack-idea-bubble"></div>
+            </div>
+                <div class="hippo-pic">
+                <img src="../images/hippo.png" alt="illustrated grey hippo" id="hippo-img">
+            </div>
+            <div>
+                <div id="meal-idea-bubble"div>
+            </div>
+        </section>
     </main>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./index.js"></script>
-    
+</div>
+</div>
 </body>
 </html>

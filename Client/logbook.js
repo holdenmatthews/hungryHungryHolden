@@ -35,6 +35,7 @@ const buildList = (res) => {
 const getLogs = () => {
     const inputFields = document.getElementById("input-fields")
     inputFields.innerHTML = ""
+    inputFields.classList = ""
     axios.get(`${baseURL}/logs`)
         .then((res) => {
             buildList(res.data)
@@ -46,6 +47,7 @@ const getLogs = () => {
 
 const newLog = () => {
     const inputFields = document.getElementById("input-fields")
+    inputFields.classList = "input-fields"
     inputFields.innerHTML = `
     <label for="datetime" class="log-label">When did you eat?</label>
     <input type="datetime-local" name="datetime" id="datetime" class="log-contents"> <br>
@@ -70,8 +72,8 @@ const newLog = () => {
     <input type="number" min="1" max="10" name="hungerScaleAfter" id="hungerScaleAfter" class="log-contents"> <br>
     <label for="notes" class="log-label">Notes:</label>
     <input type="text" name="notes" id="notes" class="log-contents"> <br>
-    <button onclick="cancelNewLog()" id="cancel-button">CANCEL</button>
-    <button onclick="addLog()" id="submit-button">SUBMIT</button>
+    <button onclick="cancelNewLog()" class="cancel-button">CANCEL</button>
+    <button onclick="addLog()" class="submit-button">SUBMIT</button>
     `
 }
 
@@ -88,7 +90,8 @@ const addLog = () => {
     .then((res) => {
         buildList(res.data)
         const inputFields = document.getElementById("input-fields")
-        inputFields.innerHTML = ''
+        inputFields.innerHTML = ""
+        inputFields.classList = ""
     })
     .catch((err) => {
         console.log(err)
@@ -97,7 +100,8 @@ const addLog = () => {
 
 const cancelNewLog = () => {
     const inputFields = document.getElementById("input-fields")
-    inputFields.innerHTML = ''
+    inputFields.innerHTML = ""
+    inputFields.classList = ""
 }
 
 const deleteLog = (id) => {
@@ -113,14 +117,14 @@ const deleteLog = (id) => {
 const editLog = (id) => {
     const logContainer = document.getElementById(`log-container_${id}`)
     logContainer.innerHTML = `
-    <label for="datetime">When did you eat?</label>
-    <input type="datetime-local" name="datetime" id="datetime_${id}" value="${logs[id].datetime}"> <br>
-    <label for="food">What did you eat?</label>
-    <input type="text" name="food" id="food_${id}" value="${logs[id].food}"> <br>
-    <label for="quantity">Quantity</label>
-    <input type="number" min="0" name="quantity" id="quantity_${id}" value="${logs[id].quantity}">
-    <label for="unit">Unit</label>
-    <select name="unit" id="unit_${id}" value="${logs[id].unit}">
+    <label for="datetime" class="log-label">When did you eat?</label>
+    <input type="datetime-local" name="datetime" id="datetime_${id}" value="${logs[id].datetime}" class="log-contents"> <br>
+    <label for="food" class="log-label">What did you eat?</label>
+    <input type="text" name="food" id="food_${id}" value="${logs[id].food}" class="log-contents"> <br>
+    <label for="quantity" class="log-label">Quantity</label>
+    <input type="number" min="0" name="quantity" id="quantity_${id}" value="${logs[id].quantity}" class="log-contents">
+    <label for="unit" class="log-label">Unit</label>
+    <select name="unit" id="unit_${id}" value="${logs[id].unit}" class="log-contents">
         <option value="pcs">pcs</option>
         <option value="g">g</option>
         <option value="oz">oz</option>
@@ -129,15 +133,15 @@ const editLog = (id) => {
         <option value="tsp">tsp</option>
         <option value="cups">cups</option>
     </select>
-    <p>Hunger Scale</p>
-    <label for="hungerScaleBefore">Before</label>
-    <input type="number" min="1" max="10" name="hungerScaleBefore" id="hungerScaleBefore_${id}" value="${logs[id].hungerScaleBefore}">
-    <label for="hungerScaleAfter">After</label>
-    <input type="number" min="1" max="10" name="hungerScaleAfter" id="hungerScaleAfter_${id}" value="${logs[id].hungerScaleAfter}"> <br>
-    <label for="notes">Notes:</label>
-    <input type="text" name="notes" id="notes_${id}" value="${logs[id].notes}">
-    <button onclick="getLogs()">CANCEL</button>
-    <button onclick="updateLog(${id})">SUBMIT</button>
+    <p class="log-label">Hunger Scale</p>
+    <label for="hungerScaleBefore" class="log-label">Before</label>
+    <input type="number" min="1" max="10" name="hungerScaleBefore" id="hungerScaleBefore_${id}" value="${logs[id].hungerScaleBefore}" class="log-contents">
+    <label for="hungerScaleAfter" class="log-label">After</label>
+    <input type="number" min="1" max="10" name="hungerScaleAfter" id="hungerScaleAfter_${id}" value="${logs[id].hungerScaleAfter}" class="log-contents"> <br>
+    <label for="notes" class="log-label">Notes:</label>
+    <input type="text" name="notes" id="notes_${id}" value="${logs[id].notes}" class="log-contents">
+    <button onclick="getLogs()" class="cancel-button">CANCEL</button>
+    <button onclick="updateLog(${id})" class="submit-button">UPDATE</button>
     `
 }
 
@@ -159,7 +163,7 @@ const updateLog = (id) => {
 }
 
 const readDate = (datetime) => {
-    return `${datetime[5]}${datetime[6]}/${datetime[8]}${datetime[9]}/${datetime[0]}${datetime[1]}${datetime[2]}${datetime[3]} ${datetime[11]}${datetime[12]}:${datetime[14]}${datetime[15]}`
+    return `${datetime[5]}${datetime[6]}/${datetime[8]}${datetime[9]}/${datetime[0]}${datetime[1]}${datetime[2]}${datetime[3]}  @  ${datetime[11]}${datetime[12]}:${datetime[14]}${datetime[15]}`
 }
 
 const dateSearch = () => {
@@ -171,6 +175,7 @@ const dateSearch = () => {
     <input type="date" name="searchdate" id="searchdate" class="log-contents">
     <button onclick="getLogsByDate()" id="search-button">SEARCH</button>
     `
+    inputFields.classList = "input-fields"
 }
 
 const getLogsByDate = () => {
@@ -183,6 +188,8 @@ const getLogsByDate = () => {
             console.log(err)
         })
 }
+
+getLogs()
 
 newLogBtn.addEventListener("click", newLog)
 getAllLogsBtn.addEventListener("click", getLogs)
