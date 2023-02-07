@@ -112,7 +112,7 @@ main {
 
 #hippo-img {
     margin: 25px;
-    height: 500px;
+    height: 450px;
     width: auto;
     position: relative;
 }
@@ -161,6 +161,8 @@ h1 {
 #hunger-scale-img {
     width: 90%;
     height: auto;
+    border: 10px solid #CC561E;
+    border-radius: 10px;
 }
 
 .item-container {
