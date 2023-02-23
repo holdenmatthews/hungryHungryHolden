@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:4000'
+const baseURL = 'http://http://35.161.176.239'
 
 const newLogBtn = document.getElementById("new-log-btn")
 const getAllLogsBtn = document.getElementById("get-all-logs")
