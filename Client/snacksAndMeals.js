@@ -1,4 +1,4 @@
-const baseURL = 'http://http://35.161.176.239'
+const baseURL = 'http://35.161.176.239'
 
 const seeSnacksBtn = document.getElementById("see-snacks")
 const addSnackBtn = document.getElementById("add-snack")
