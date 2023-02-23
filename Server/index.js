@@ -8,7 +8,7 @@ const app = express()
 // middleware
 app.use(express.json())
 app.use(cors())
-app.use(express.static(`${__dirname}/Client`))
+app.use(express.static(`${__dirname}/../Client`))
 
 // endpoints
 const { getLogs, getLogsByDate, addLog, deleteLog, editLog, randomSnack, randomMeal, getSnacks, addNewSnack, deleteSnack, getMeals, addNewMeal, deleteMeal } = require('./controller')
